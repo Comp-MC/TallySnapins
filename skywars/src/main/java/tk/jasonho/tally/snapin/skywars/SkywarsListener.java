@@ -4,9 +4,7 @@ import com.google.gson.JsonObject;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.compmc.skywars.SkyWarsTeam;
-import org.compmc.skywars.events.GameTieEvent;
-import org.compmc.skywars.events.GameWinEvent;
-import org.compmc.skywars.events.PlayerEliminateEvent;
+import org.compmc.skywars.events.*;
 import tk.jasonho.tally.core.bukkit.*;
 
 import java.util.*;
@@ -33,6 +31,26 @@ public class SkywarsListener extends TallyListener {
             JsonObject data = SkywarsUtils.newDataFromGame(event.getGame(), team);
             for (UUID member : team.getMembers()) {
                 super.operationHandler.track("skywars_tie", null, member, data);
+            }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onStartEvent(GameStartEvent event) {
+        for (SkyWarsTeam team : event.getGame().getTeams()) {
+            JsonObject data = SkywarsUtils.newDataFromGame(event.getGame(), team);
+            for (UUID member : team.getMembers()) {
+                super.operationHandler.track("skywars_start", null, member, data);
+            }
+        }
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onPreStartEvent(GamePreStartEvent event) {
+        for (SkyWarsTeam team : event.getGame().getTeams()) {
+            JsonObject data = SkywarsUtils.newDataFromGame(event.getGame(), team);
+            for (UUID member : team.getMembers()) {
+                super.operationHandler.track("skywars_prestart", null, member, data);
             }
         }
     }
