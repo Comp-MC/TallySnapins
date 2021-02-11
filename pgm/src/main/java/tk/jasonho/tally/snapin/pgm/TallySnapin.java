@@ -1,4 +1,4 @@
-package tk.jasonho.tally.snapin;
+package tk.jasonho.tally.snapin.pgm;
 
 import tk.jasonho.tally.core.bukkit.TallyOperationHandler;
 import tk.jasonho.tally.core.bukkit.TallyPlugin;

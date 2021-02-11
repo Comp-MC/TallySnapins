@@ -10,8 +10,9 @@
 
     <modules>
         <module>competitive-core</module>
-        <module>atlas</module>
+        <!--<module>atlas</module>-->
         <module>pgm</module>
+        <module>skywars</module>
     </modules>
 
     <properties>
@@ -44,7 +45,7 @@
                 <artifactId>tally-bukkitcore</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>net.avicus</groupId>
                 <artifactId>atlas-core</artifactId>
                 <version>1.8.8-SNAPSHOT</version>
@@ -67,7 +68,7 @@
                 <artifactId>library</artifactId>
                 <version>1.8.8-SNAPSHOT</version>
                 <scope>provided</scope>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>app.ashcon</groupId>
                 <artifactId>sportpaper</artifactId>
@@ -82,6 +83,11 @@
                 <groupId>tc.oc.pgm</groupId>
                 <artifactId>util</artifactId>
                 <version>0.9-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>org.compmc</groupId>
+                <artifactId>sky-wars</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

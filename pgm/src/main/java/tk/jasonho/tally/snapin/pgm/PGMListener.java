@@ -1,4 +1,4 @@
-package tk.jasonho.tally.snapin;
+package tk.jasonho.tally.snapin.pgm;
 
 import com.google.common.util.concurrent.AtomicDouble;
 import com.google.gson.JsonObject;

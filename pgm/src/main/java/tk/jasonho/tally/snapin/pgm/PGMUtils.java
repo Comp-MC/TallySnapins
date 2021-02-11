@@ -1,4 +1,4 @@
-package tk.jasonho.tally.snapin;
+package tk.jasonho.tally.snapin.pgm;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonNull;
