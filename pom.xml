@@ -24,10 +24,6 @@
     <repositories>
         <!-- PGM -->
         <repository>
-            <id>vector-private</id>
-            <url>https://repo.vectormc.net/artifactory/private</url>
-        </repository>
-        <repository>
             <id>pgm-ac</id>
             <url>https://repo.ashcon.app/content/repositories/snapshots</url>
         </repository>
