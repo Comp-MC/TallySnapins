@@ -10,7 +10,7 @@ public class SkywarsUtils {
 
     public static JsonObject newDataFromGame(SkyWarsGame game) {
         JsonObject data = new JsonObject();
-        data.addProperty("map", game.getGameWorld().getName());
+        data.addProperty("map", game.getData().getName());
         data.addProperty("player_count", game.getTeams().stream().mapToInt(value -> value.getMembers().size()).sum());
 
         JsonObject teams = new JsonObject();
