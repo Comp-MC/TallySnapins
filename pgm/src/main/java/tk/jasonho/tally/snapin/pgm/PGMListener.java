@@ -1,6 +1,7 @@
 package tk.jasonho.tally.snapin.pgm;
 
 import com.google.common.util.concurrent.AtomicDouble;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import org.apache.commons.lang3.tuple.Pair;
 import org.bukkit.Bukkit;
@@ -188,11 +189,12 @@ public class PGMListener extends TallyListener {
         // track!
         JsonObject jsonObject = PGMUtils.pgmEventToData(event);
         jsonObject.addProperty("caused_by_type", damage);
-        jsonObject.addProperty("assisted", killer.getId().toString());
 
         if(killer != null && killer.getPlayer().isPresent()) {
+            jsonObject.addProperty("assisted", killer.getId().toString());
             operationHandler.trackPVPTransaction(killer.getPlayer().get().getId(), killed.getId(), damage);
         } else {
+            jsonObject.add("assisted", JsonNull.INSTANCE);
             operationHandler.trackPVPTransaction(DamageTrackModule.ENVIRONMENT, killed.getId(), damage);
         }
 
