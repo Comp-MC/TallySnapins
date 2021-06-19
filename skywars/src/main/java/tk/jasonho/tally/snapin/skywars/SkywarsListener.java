@@ -3,8 +3,8 @@ package tk.jasonho.tally.snapin.skywars;
 import com.google.gson.JsonObject;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.compmc.skywars.SkyWarsTeam;
-import org.compmc.skywars.events.*;
+import org.compmc.games.skywars.SkyWarsTeam;
+import org.compmc.games.skywars.events.*;
 import tk.jasonho.tally.core.bukkit.*;
 
 import java.util.*;

@@ -3,8 +3,8 @@ package tk.jasonho.tally.snapin.skywars;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import org.compmc.skywars.SkyWarsGame;
-import org.compmc.skywars.SkyWarsTeam;
+import org.compmc.games.skywars.SkyWarsGame;
+import org.compmc.games.skywars.SkyWarsTeam;
 
 public class SkywarsUtils {
 
