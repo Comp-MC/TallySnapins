@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.compmc.games.skywars.SkyWarsTeam;
-import org.compmc.games.skywars.events.*;
+import org.compmc.games.core.events.*;
 import tk.jasonho.tally.core.bukkit.*;
 
 import java.util.*;
