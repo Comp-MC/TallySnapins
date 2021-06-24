@@ -3,18 +3,18 @@ package tk.jasonho.tally.snapin.skywars;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import org.compmc.games.skywars.SkyWarsGame;
-import org.compmc.games.skywars.SkyWarsTeam;
+import org.compmc.games.core.Game;
+import org.compmc.games.core.teams.Team;
 
 public class SkywarsUtils {
 
-    public static JsonObject newDataFromGame(SkyWarsGame game) {
+    public static JsonObject newDataFromGame(Game game) {
         JsonObject data = new JsonObject();
         data.addProperty("map", game.getData().getName());
-        data.addProperty("player_count", game.getTeams().stream().mapToInt(value -> value.getMembers().size()).sum());
+        data.addProperty("player_count", game.getTeamManager().getTeams().stream().mapToInt(value -> value.getMembers().size()).sum());
 
         JsonObject teams = new JsonObject();
-        for (SkyWarsTeam team : game.getTeams()) {
+        for (Team team : game.getTeamManager().getTeams()) {
             JsonObject teamData = new JsonObject();
 
             JsonArray players = new JsonArray();
@@ -34,7 +34,7 @@ public class SkywarsUtils {
         return data;
     }
 
-    public static JsonObject newDataFromGame(SkyWarsGame game, SkyWarsTeam team) {
+    public static JsonObject newDataFromGame(Game game, Team team) {
         JsonObject data = newDataFromGame(game);
         data.addProperty("player_team", team.getName());
         return data;
