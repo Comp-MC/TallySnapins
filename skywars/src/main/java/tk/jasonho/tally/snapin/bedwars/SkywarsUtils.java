@@ -1,4 +1,4 @@
-package tk.jasonho.tally.snapin.skywars;
+package tk.jasonho.tally.snapin.bedwars;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

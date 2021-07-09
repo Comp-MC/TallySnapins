@@ -1,30 +1,30 @@
-package tk.jasonho.tally.snapin.skywars;
+package tk.jasonho.tally.snapin.bedwars;
 
 import tk.jasonho.tally.core.bukkit.TallyOperationHandler;
 import tk.jasonho.tally.core.bukkit.TallyPlugin;
 import tk.jasonho.tally.snapin.core.competitive.CompetitiveOperations;
 import tk.jasonho.tally.snapin.core.competitive.Snapin;
 
-public class SkywarsSnapin extends Snapin {
+public class BedwarsSnapin extends Snapin {
 
     public TallyPlugin tallyInstance;
     public TallyOperationHandler operationHandler;
-    public SkywarsListener skywarsListener;
+    public BedwarsListener bedwarsListener;
 
     @Override
     public void onEnable() {
-        this.getLogger().info("Tally Snap-in for Skywars is loading...");
+        this.getLogger().info("Tally Snap-in for Bedwars is loading...");
         this.tallyInstance = TallyPlugin.getInstance();
         this.operationHandler = new CompetitiveOperations(tallyInstance);
 
-        this.skywarsListener = new SkywarsListener(this.operationHandler);
-        this.tallyInstance.registerTallyListener(this.skywarsListener, this);
+        this.bedwarsListener = new BedwarsListener(this.operationHandler);
+        this.tallyInstance.registerTallyListener(this.bedwarsListener, this);
 
-        this.getLogger().info("Tally Snap-in for Skywars loaded.");
+        this.getLogger().info("Tally Snap-in for Bedwars loaded.");
     }
 
     @Override
     public void onDisable() {
-        this.tallyInstance.unregisterTallyListener(this.skywarsListener);
+        this.tallyInstance.unregisterTallyListener(this.bedwarsListener);
     }
 }

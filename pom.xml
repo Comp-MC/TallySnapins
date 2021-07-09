@@ -13,6 +13,7 @@
         <!--<module>atlas</module>-->
         <module>pgm</module>
         <module>skywars</module>
+        <module>bedwars</module>
     </modules>
 
     <properties>
@@ -73,12 +74,12 @@
             <dependency>
                 <groupId>tc.oc.pgm</groupId>
                 <artifactId>core</artifactId>
-                <version>0.9-SNAPSHOT</version>
+                <version>0.10-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>tc.oc.pgm</groupId>
                 <artifactId>util</artifactId>
-                <version>0.9-SNAPSHOT</version>
+                <version>0.10-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.compmc</groupId>
