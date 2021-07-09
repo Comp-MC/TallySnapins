@@ -4,13 +4,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import org.compmc.games.core.Game;
+import org.compmc.games.core.info.MapInfoComponent;
 import org.compmc.games.core.teams.Team;
 
 public class SkywarsUtils {
 
     public static JsonObject newDataFromGame(Game game) {
         JsonObject data = new JsonObject();
-        data.addProperty("map", game.getData().getName());
+        data.addProperty("map", game.needComponent(MapInfoComponent.class).getName());
         data.addProperty("player_count", game.getTeamManager().getTeams().stream().mapToInt(value -> value.getMembers().size()).sum());
 
         JsonObject teams = new JsonObject();
